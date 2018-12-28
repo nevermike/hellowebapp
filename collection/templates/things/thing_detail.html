@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load humanize %}
 {% block title %}
   {{ thing.name }} - {{ block.super }}
 {% endblock title %}
@@ -8,5 +7,7 @@
 
   <h1>{{ thing.name }}</h1>
   <p>{{ thing.description }}</p>
+
+  <p><a href="{% url 'edit_thing' slug=thing.slug %}">Edit Me</a></p>
 
 {% endblock content %}
