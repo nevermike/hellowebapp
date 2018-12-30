@@ -8,6 +8,8 @@
   <h1>{{ thing.name }}</h1>
   <p>{{ thing.description }}</p>
 
-  <p><a href="{% url 'edit_thing' slug=thing.slug %}">Edit Me</a></p>
+  {% if user == thing.user %}
+    <p><a href="{% url 'edit_thing' slug=thing.slug %}">Edit Me</a></p>
+  {% endif %}
 
 {% endblock content %}
